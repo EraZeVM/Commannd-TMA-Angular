@@ -1,0 +1,96 @@
+<div class="container-fluid center">
+    <br>
+    <div class='row'>
+        <div class="col-md">
+            <div>Database version</div>
+            <br>
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead class="thead-light table-text">
+                    <tr>
+                        <th>current</th>
+                        <th>target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12</td>
+                        <td>24</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md">
+            <br> <button type="button" class="btn btn-success" [disabled]="!isUpToDate">Update database</button>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead class="thead-light table-text">
+                    <tr>
+                        <th>Back-End</th>
+                        <th>Front-End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.0</td>
+                        <td>1.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        Database - META-DATA
+        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <table class="table table-bordered table-text">
+                <thead class="thead-light">
+                    <tr>
+                        <th>DatabaseProductName</th>
+                        <th>DatabaseProductVersion</th>
+                        <th>DatabaseMajorVersion</th>
+                        <th>DatabaseMinorVersion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>My-sql</th>
+                        <th>5.x</th>
+                        <th>6</th>
+                        <th>1</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table table-bordered table-text">
+                <thead class="thead-light">
+                    <tr>
+                        <th>DriverVersion</th>
+                        <th>DriverMajorVersion</th>
+                        <th>DriverMinorVersion</th>
+                        <th>JDBCMajorVersion</th>
+                        <th>JDBCMinorVersion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>1</th>
+                        <th>12</th>
+                        <th>2</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

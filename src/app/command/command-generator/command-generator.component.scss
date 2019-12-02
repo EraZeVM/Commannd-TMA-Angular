@@ -1,0 +1,9 @@
+.tabs {
+    margin: 1em; /* Adds lots of space around the tabs, to avoid the border to fall into the tab content area */
+ }
+ 
+ /* Only visible when the mouse is on a tab title */
+ .tab:hover {
+    color: black; /* Colors the text in black to highlight the possible selection */
+    text-decoration: none; /* Removes the hyperlink underline style */
+ }

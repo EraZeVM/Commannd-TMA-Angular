@@ -1,0 +1,18 @@
+    <br>
+    <div class="container container-fluid col-md-12">
+            <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>APPLICATION LOGGER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let log of logList; index as i">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{log}}</td>
+                            </tr>
+                    </tbody>
+                </table>
+    </div>
+    

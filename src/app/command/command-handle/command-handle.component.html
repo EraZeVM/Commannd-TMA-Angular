@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <app-command-list *ngFor="let singleList of commandListScreenOne" [status]="singleList.statusList">
+            </app-command-list>
+        </div>
+        <div class="col-md-6">
+            <app-command-list *ngFor="let singleList of commandListScreenTwo" [status]="singleList.statusList">
+            </app-command-list>
+        </div>
+        <div class="row"></div>
+        <div class="col-md-6">
+            <app-command-list *ngFor="let singleList of commandListScreenThree" [status]="singleList.statusList">
+            </app-command-list>
+        </div>
+
+        <div class="col-md-6">
+            <app-command-list *ngFor="let singleList of commandListScreenFour" [status]="singleList.statusList">
+            </app-command-list>
+        </div>
+    </div>
+</div>

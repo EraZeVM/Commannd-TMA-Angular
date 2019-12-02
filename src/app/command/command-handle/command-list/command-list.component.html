@@ -1,0 +1,25 @@
+<div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+        <button class="btn btn-link pull-right"><span style="font-size: 250%">&#8678;</span></button>
+    </div>
+    <div class="col-md-auto">
+        <span class="font-weight-bold align-bottom" style="font-size: 200%">Mon status {{ status }}</span>
+    </div>
+    <div class="col col-lg-2">
+        <button class="btn btn-link"><span style="font-size: 250%">&#8680;</span></button>
+    </div>
+</div>
+<div class="container">
+    <div class="row bg-dark text-white">
+        <div class="col-sm">Command</div>
+
+        <div class="col-sm">Magasin</div>
+        <div class="col-sm">Entrepot</div>
+        <div class="col-sm">Downgrade</div>
+        <div class="col-sm">Upgrade</div>
+    </div>
+</div>
+<div class="bg-transparent text-dark">
+    <app-command-detail *ngFor="let detail of detailListOrder" [idCommande]="detail.commandId"
+        [idMag]="detail.idMagasin" [idEnt]="detail.idEntrepot"></app-command-detail>
+</div>
