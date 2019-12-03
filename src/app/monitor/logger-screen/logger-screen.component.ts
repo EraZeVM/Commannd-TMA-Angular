@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,18 +9,20 @@ import { Observable } from 'rxjs';
 })
 export class LoggerScreenComponent implements OnInit {
 
-  private ws_url = 'localhost:8080/tma/api/orderlog/read' ;
-
-  constructor(private _httpClient: HttpClient) { }
-
+  private ws_url = 'http://127.0.0.1:8080/tma/api/orderlog/read' ;
   private logList = [];
 
+  constructor(private http: HttpClient) { }
+
+
   ngOnInit() {
-   this.getLogList().subscribe(()=> console.log("GOT REPONSE"));
+   this.getLogList().subscribe(data => 
+    this.logList=data.LOGS
+    );
     }
 
   getLogList(): Observable<any>{
-    return this._httpClient.get(this.ws_url);
+    return this.http.get(this.ws_url);
   }
 
 }

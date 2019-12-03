@@ -34,7 +34,7 @@ import { CommandModule } from './command/command.module';
     MonitorModule,
     CommandModule
   ],
-  providers: [],
+  providers: [{ provide: Number, useValue: "dummy" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

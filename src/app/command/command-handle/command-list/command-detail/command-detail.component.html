@@ -1,9 +1,10 @@
 <div class="container">
     <div class="row border-bottom">
-      <div class="col-sm">{{ idCommande }}</div>
-      <div class="col-sm">{{ idMag }}</div>
-      <div class="col-sm">{{ idEnt }}</div>
-      <div class="col-sm"><button id="btnFA" class="btn btn-primary"><span>&#8678;</span>Downgrade</button></div>
-      <div class="col-sm"><button id="btnFA" class="btn btn-primary">Upgrade<span>&#8680;</span></button></div>
+      <div class="col-md-2">{{ idCommande }}</div>
+      <div class="col-md-2">{{ idMag }}</div>
+      <div class="col-md-2">{{ idEnt }}</div>
+      <div class="col-md-2">{{ idProduit }}</div>
+      <div class="col-md-2" ><button id="btnFA" onClick="window.location.reload();" class="btn btn-primary button-cmd" [disabled]="!isDowngrable" (click)="downgradeCommand()">Down</button></div>
+      <div class="col-md-2" ><button id="btnFA" onClick="window.location.reload();" class="btn btn-primary button-cmd" [disabled]="!isUpgradable" (click)="upgradeCommand()">Up</button></div>
     </div>
   </div>

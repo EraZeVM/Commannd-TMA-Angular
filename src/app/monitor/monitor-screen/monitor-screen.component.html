@@ -11,14 +11,14 @@
             <table class="table table-bordered">
                 <thead class="thead-light table-text">
                     <tr>
-                        <th>current</th>
-                        <th>target</th>
+                        <th>Current</th>
+                        <th>Target</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12</td>
-                        <td>24</td>
+                        <td>{{currentDB}}</td>
+                        <td>{{targetDB}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -26,6 +26,8 @@
         <div class="col-md">
             <br> <button type="button" class="btn btn-success" [disabled]="!isUpToDate">Update database</button>
         </div>
+    </div>
+    <div class='row'>
         <div class="col-md-4">
             <table class="table table-bordered">
                 <thead class="thead-light table-text">
@@ -36,61 +38,45 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.0</td>
-                        <td>1.1</td>
+                        <td>{{backEndVersion}}</td>
+                        <td>{{frontEndVersion}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
     <div class="row">
+        <br><br>
         Database - META-DATA
         <br><br>
     </div>
     <div class="row">
-        <div class="col-md">
+        <div class="col-md6">
             <table class="table table-bordered table-text">
                 <thead class="thead-light">
                     <tr>
                         <th>DatabaseProductName</th>
                         <th>DatabaseProductVersion</th>
-                        <th>DatabaseMajorVersion</th>
-                        <th>DatabaseMinorVersion</th>
+                        <th>DriverVersion</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>My-sql</th>
-                        <th>5.x</th>
-                        <th>6</th>
-                        <th>1</th>
+                        <th>{{dbPdName}}</th>
+                        <th>{{dbPdVersion}}</th>
+                        <th>{{driverVersion}}</th>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-9">
-            <table class="table table-bordered table-text">
-                <thead class="thead-light">
-                    <tr>
-                        <th>DriverVersion</th>
-                        <th>DriverMajorVersion</th>
-                        <th>DriverMinorVersion</th>
-                        <th>JDBCMajorVersion</th>
-                        <th>JDBCMinorVersion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>1</th>
-                        <th>12</th>
-                        <th>2</th>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" (click)="subClear()"> Clear All</button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" (click)="subClearToday()"> Clear 4 status</button>
         </div>
     </div>
 </div>

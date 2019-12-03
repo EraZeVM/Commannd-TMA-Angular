@@ -1,25 +1,25 @@
-<div class="row justify-content-md-center">
-    <div class="col col-lg-2">
-        <button class="btn btn-link pull-right"><span style="font-size: 250%">&#8678;</span></button>
+<div class="row">
+    <div class="col-md-4 lead lead-sizer">
+        <span> statut {{ status }}</span>
     </div>
-    <div class="col-md-auto">
-        <span class="font-weight-bold align-bottom" style="font-size: 200%">Mon status {{ status }}</span>
+    <div class="col col-md-2 d-flex justify-content-end button-resize">
+        <button class="btn btn-link pull-right"><span style="font-size: 150%">&#8678;</span></button>
     </div>
-    <div class="col col-lg-2">
-        <button class="btn btn-link"><span style="font-size: 250%">&#8680;</span></button>
+    <div class="col col-md-2 d-flex justify-content-end button-resize">
+        <button class="btn btn-link"><span style="font-size: 150%">&#8680;</span></button>
     </div>
 </div>
-<div class="container">
+<div class="container sizer border rounded">
     <div class="row bg-dark text-white">
-        <div class="col-sm">Command</div>
-
-        <div class="col-sm">Magasin</div>
-        <div class="col-sm">Entrepot</div>
-        <div class="col-sm">Downgrade</div>
-        <div class="col-sm">Upgrade</div>
+        <div class="col-md-2 float-md-left">Commande</div>
+        <div class="col-md-2 float-md-left">Magasin</div>
+        <div class="col-md-2 float-md-left">Entrepot</div>
+        <div class="col-md-2 float-md-left">Produit</div>
+        <div class="col-md-2 float-md-left">Down</div>
+        <div class="col-md-2 float-md-left">Up</div>
     </div>
-</div>
-<div class="bg-transparent text-dark">
-    <app-command-detail *ngFor="let detail of detailListOrder" [idCommande]="detail.commandId"
-        [idMag]="detail.idMagasin" [idEnt]="detail.idEntrepot"></app-command-detail>
+    <div class="bg-transparent text-dark overclass ">
+        <app-command-detail *ngFor="let detail of detailListOrder" [idCommande]="detail.IDCOMMANDE"
+            [idMag]="detail.MAGASIN" [idEnt]="detail.ENTREPOT" [idProduit]="detail.PRODUIT" [idEtat]="detail.IDETAT"></app-command-detail>
+    </div>
 </div>

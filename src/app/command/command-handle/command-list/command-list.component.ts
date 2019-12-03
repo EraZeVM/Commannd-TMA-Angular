@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient, HttpParams, HttpClientModule  } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-command-list',
@@ -9,37 +11,29 @@ export class CommandListComponent implements OnInit {
 
   @Input() status: Number;
 
-  detailListOrder= [
-    {
-      commandId: 1,
-      idEntrepot: '1',
-      idMagasin: '2'
-    },
-    {
-      commandId: 2,
-      idEntrepot: '1',
-      idMagasin: '3'
-    },
-    {
-      commandId: 3,
-      idEntrepot: '3',
-      idMagasin: '2'
-    },
-    {
-      commandId: 4,
-      idEntrepot: '2',
-      idMagasin: '3'
-    }
-  ]
+  private ws_url = `http://127.0.0.1:8080/tma/api/order/readbystatus`;
+
+
+  detailListOrder= []
 
   isUpgradable = true;
   isDowngrable = true;
 
-  constructor() { }
-
-  ngOnInit() {
-    console.log("init list");
-     
+  constructor(private http: HttpClient, status : number) { 
+    this.status = status;
   }
 
+  ngOnInit() {    
+    this.loadData();
+  }
+
+  loadData(){
+    this.getCommandList().subscribe(data => this.detailListOrder = data);
+  }
+
+  getCommandList(): Observable<any>{
+    let params = new HttpParams().set('status', this.status.toString());
+    return this.http.get(this.ws_url, {params : params});
+  }
+  
 }
